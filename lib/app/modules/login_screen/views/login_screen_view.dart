@@ -9,16 +9,18 @@ class LoginScreenView extends GetView<LoginScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('LoginScreenView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'LoginScreenView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(top: 94, left: 24, bottom: 24, right: 24),
+          child: Center(
+            child: Column(
+              children: [
+                Image(image: AssetImage('assets/logos/kenyangin_logo.png'))
+              ],
+            ),
+          ),
+          ),
+      )
     );
   }
 }
