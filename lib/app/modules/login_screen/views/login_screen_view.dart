@@ -1,6 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
@@ -63,7 +64,7 @@ class LoginScreenView extends GetView<LoginScreenController> {
                 children: [
                   TextButton(
                     onPressed: (){}, 
-                  child: const Text(KTexts.forgetPasswordTitle),
+                  child: Text(KTexts.forgetPasswordTitle, style: GoogleFonts.plusJakartaSans(textStyle: TextStyle(fontWeight: FontWeight.w600),),),
                   ),
                 ],
               ),

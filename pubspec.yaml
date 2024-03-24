@@ -21,6 +21,7 @@ dependencies:
 
   # State Management
   get: ^4.6.6
+  google_fonts: ^6.2.1
 
   # -------------------- PACKAGES END -------------------- #
 
