@@ -1,125 +1,56 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_strings.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/dont_have_account.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/forget_password.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/login_form_divider.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/login_header.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/password_form.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/string_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/continue_with_google.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/main_button.dart';
 import '../controllers/login_screen_controller.dart';
 
 class LoginScreenView extends GetView<LoginScreenController> {
   const LoginScreenView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 94, left: 16, bottom: 16, right: 16),
+          padding: EdgeInsets.only(top: 94, left: 16, bottom: 16, right: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Image.asset(KImages.appLogo),
-              ),
-              const SizedBox(height: 47,),
-              const Text(KTexts.loginTitle, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
-              const SizedBox(height: 8,),
-              const Text(KTexts.simpleConfirmationLogin, style: TextStyle(fontSize: 13),),
-              const SizedBox(height: 16,),
-              TextFormField(
-                decoration: InputDecoration(
-                  fillColor: KColors.formColor,
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: KColors.primaryColor)
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16,),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  fillColor: KColors.formColor,
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(8)
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: KColors.primaryColor)
-                  ),
-                  suffixIcon: IconButton(
-                    onPressed: (){}, 
-                    icon: const Icon(FluentIcons.eye_off_20_regular),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 8,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: (){}, 
-                  child: Text(KTexts.forgetPasswordTitle, style: GoogleFonts.plusJakartaSans(textStyle: TextStyle(fontWeight: FontWeight.w600),),),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8,),
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton(
-                  onPressed: (){}, 
-                  style: ButtonStyle(shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                    )
-                  ), backgroundColor: MaterialStateProperty.all(KColors.primaryColor)),
-                  child: const Text(KTexts.login, style: TextStyle(color: Colors.white, fontSize: 18),),
-                  ),
-              ),
-              const SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(KTexts.dontHaveAccount),
-                  TextButton(onPressed: (){}, child: Text(KTexts.registerHere, style: TextStyle(color: KColors.primaryColor),)),
-                ],
-              ),
-              const SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(child: Divider(thickness: 2, endIndent: 20, color: KColors.dividerGrey,)),
-                  Text(KTexts.orText, style: TextStyle(fontSize: 16, color: KColors.darkGrey),),
-                  Expanded(child: Divider(thickness: 2, indent: 20, endIndent: 0, color: KColors.dividerGrey,)),
-                ],
-              ),
-              const SizedBox(height: 20,),
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton(
-                  onPressed: (){}, 
-                  style: ButtonStyle(shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                    )
-                  ), backgroundColor: MaterialStateProperty.all(Colors.white)),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(image: AssetImage(KImages.googleLogo), height: 20,),
-                      SizedBox(width: 16,),
-                      Text(KTexts.continueWithGoogle, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),),
-                    ],
-                  )
-                  ),
-              ),
+              // -- Header
+              KLoginHeader(),
+
+              // Username
+              KStringForm(formName: KTexts.usernameText,),
+              SizedBox(height: 16,),
+
+              // Password
+              KPasswordForm(),
+              SizedBox(height: 8,),
+
+              // Lupa Password
+              KForgetPassword(),
+              SizedBox(height: 8,),
+
+              // Login Button
+              KMainButton(buttonName: KTexts.login,),
+              SizedBox(height: 16,),
+
+              // Register Button
+              KDontHaveAccount(),
+              SizedBox(height: 20,),
+
+              // Divider
+              KFromDivider(),
+              SizedBox(height: 20,),
+              
+              // Google Sign-in
+              KContinueWithGoogle(),
             ],
           ),
           ),
@@ -127,3 +58,6 @@ class LoginScreenView extends GetView<LoginScreenController> {
     );
   }
 }
+
+
+

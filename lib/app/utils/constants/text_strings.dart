@@ -10,6 +10,8 @@ class KTexts {
   static const String dontHaveAccount = "Belum memiliki akun?";
   static const String registerHere = "Daftar disini";
   static const String continueWithGoogle = "Lanjutkan dengan Google";
+  static const String usernameText = "Username";
+  static const String passwordText = "Password";
 
   // Global Texts
   static const String orText = "Atau";
