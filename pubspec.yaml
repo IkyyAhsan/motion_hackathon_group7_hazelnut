@@ -2,16 +2,27 @@ name: motion_hackathon_group7_hazelnut
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
+
 environment: 
   sdk: '>=3.3.2 <4.0.0'
 
+# -------------------- PACKAGES -------------------- #
 dependencies: 
-  cupertino_icons: ^1.0.6
-  get_cli: ^1.8.1
-  get: 4.6.6
   flutter: 
     sdk: flutter
+
+  # Utility Packages
+  cupertino_icons: ^1.0.6
+  get_cli: ^1.8.1
   flutter_native_splash: ^2.4.0
+
+  # Icons
+  iconsax: ^0.0.8
+
+  # State Management
+  get: ^4.6.6
+
+  # -------------------- PACKAGES END -------------------- #
 
 dev_dependencies: 
   flutter_lints: ^3.0.0
@@ -20,4 +31,9 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+
+# -------------------- LOCAL ASSETS -------------------- #
+assets:
+  - assets/images/
+  - assets/logos/
 
