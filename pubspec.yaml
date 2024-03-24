@@ -17,6 +17,7 @@ dependencies:
 
   # Icons
   iconsax: ^0.0.8
+  fluentui_system_icons: ^1.0.0
 
   # State Management
   get: ^4.6.6
@@ -32,9 +33,9 @@ flutter:
   uses-material-design: true
 
 # -------------------- LOCAL ASSETS -------------------- #
-assets:
-  - assets/images/
-  - assets/logos/
+  assets:
+    - assets/images/
+    - assets/logos/
 
 
 
