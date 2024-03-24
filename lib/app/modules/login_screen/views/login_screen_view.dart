@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_string.dart';
 import '../controllers/login_screen_controller.dart';
