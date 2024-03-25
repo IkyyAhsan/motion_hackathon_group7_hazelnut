@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/dont_have_account.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/forget_password.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/login_form_divider.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/login_header.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/form_header.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/password_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/string_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
@@ -23,14 +23,14 @@ class LoginScreenView extends GetView<LoginScreenController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // -- Header
-              KLoginHeader(),
+              KFormHeader(headerTitle: KTexts.loginTitle, headerDesc: KTexts.loginDesc,),
 
               // Username
               KStringForm(formName: KTexts.usernameText,),
               SizedBox(height: 16,),
 
               // Password
-              KPasswordForm(),
+              KPasswordForm(formName: KTexts.passwordText,),
               SizedBox(height: 8,),
 
               // Lupa Password
@@ -41,8 +41,8 @@ class LoginScreenView extends GetView<LoginScreenController> {
               KMainButton(buttonName: KTexts.login,),
               SizedBox(height: 16,),
 
-              // Register Button
-              KDontHaveAccount(),
+              // Dont Have Account Button
+              KStatusHaveAccount(status: KTexts.dontHaveAccount),
               SizedBox(height: 20,),
 
               // Divider

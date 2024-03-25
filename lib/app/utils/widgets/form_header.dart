@@ -3,10 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 
-class KLoginHeader extends StatelessWidget {
-  const KLoginHeader({
-    super.key,
+class KFormHeader extends StatelessWidget {
+  const KFormHeader({
+    super.key, 
+    required this.headerTitle, 
+    required this.headerDesc,
   });
+
+  final String headerTitle;
+  final String headerDesc;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +26,9 @@ class KLoginHeader extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 47,),
-                  Text(KTexts.loginTitle, style: GoogleFonts.plusJakartaSans(fontSize: 24, fontWeight: FontWeight.w700)),
+                  Text(headerTitle, style: GoogleFonts.plusJakartaSans(fontSize: 24, fontWeight: FontWeight.w700)),
                   const SizedBox(height: 8,),
-                  Text(KTexts.simpleConfirmationLogin, style: GoogleFonts.plusJakartaSans(fontSize: 14),),
+                  Text(headerDesc, style: GoogleFonts.plusJakartaSans(fontSize: 14),),
                   const SizedBox(height: 16,),
                 ],
               ))

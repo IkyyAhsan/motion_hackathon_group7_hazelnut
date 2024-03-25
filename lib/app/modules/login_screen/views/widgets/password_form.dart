@@ -2,19 +2,20 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 
 class KPasswordForm extends StatelessWidget {
   const KPasswordForm({
-    super.key,
+    super.key, required this.formName,
   });
+
+  final String formName;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: true,
       decoration: InputDecoration(
-        labelText: KTexts.passwordText,
+        labelText: formName,
         labelStyle: GoogleFonts.plusJakartaSans(fontSize: 16, color: KColors.labelTextColor),
         fillColor: KColors.formColor,
         filled: true,
