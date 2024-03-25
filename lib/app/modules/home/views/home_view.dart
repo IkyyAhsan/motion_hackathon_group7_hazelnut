@@ -6,187 +6,222 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/home_controller.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 
 class HomeView extends GetView<HomeController> {
+  final HomeController controller = Get.put(HomeController());
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(children: [
-            SizedBox(
-              height: 32,
-            ),
-            Row(
-              children: [
-                Text(
-                  "Halo, Rizal",
-                  style: GoogleFonts.plusJakartaSans(
-                      textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 4,
-            ),
-            Stack(children: [
-              Align(
-                alignment: Alignment.centerRight,
-                child: Stack(
-                  children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(999),
-                        child: SizedBox(
-                            width: 80,
-                            height: 80,
-                            child: Image.asset('assets/logos/notif.png')),
-                      ),
-                    ),
-                  ],
-                ),
+    return GetBuilder<HomeController>(builder: (controller) {
+      return Scaffold(
+        body: SafeArea(
+            child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(children: [
+              SizedBox(
+                height: 32,
               ),
               Row(
                 children: [
                   Text(
-                    "Mau makan apa hari ini?",
+                    "Halo, Rizal",
                     style: GoogleFonts.plusJakartaSans(
                         textStyle: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w700)),
-                  ),
-                  SizedBox(
-                    width: 64,
+                            fontSize: 20, fontWeight: FontWeight.w600)),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Stack(children: [
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(999),
+                          child: SizedBox(
+                              width: 80,
+                              height: 80,
+                              child: Image.asset('assets/logos/notif.png')),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Mau makan apa hari ini?",
+                      style: GoogleFonts.plusJakartaSans(
+                          textStyle: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w700)),
+                    ),
+                    SizedBox(
+                      width: 64,
+                    ),
+                  ],
+                ),
+              ]),
+              SizedBox(
+                height: 20,
+              ),
+              CarouselSlider(
+                options: CarouselOptions(
+                  height: 135.0,
+                  onPageChanged: (index, reason) =>
+                      controller.ChangeSliderIndex(index),
+                ),
+                items: [1, 2, 3, 4, 5].map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(color: Colors.amber),
+                        child: Image.asset(
+                          'assets/logos/BaseAds.png', // Ganti dengan path gambar Anda
+                          fit: BoxFit.cover, // Sesuaikan dengan kebutuhan Anda
+                        ),
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
+              DotsIndicator(
+                dotsCount: 5,
+                position: controller.SliderIndex,
+              ),
+              // Container(
+              //   width: 343,
+              //   height: 135,
+              //   child: Image.asset('assets/logos/BaseAds.png'),
+              // ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                  width: 343,
+                  height: 48,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.grey),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(top: 20),
+                        prefixIcon: Padding(
+                          padding:
+                              const EdgeInsetsDirectional.only(start: 12.0),
+                          child: Icon(Icons.search),
+                        ),
+                        hintText: "Cari makan yang kamu inginkan",
+                        hintStyle: GoogleFonts.plusJakartaSans(
+                            fontSize: 14, color: Colors.black),
+                        fillColor: Colors.grey,
+                        filled: true,
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(12))),
+                  )),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Rekomendasi",
+                    style: GoogleFonts.plusJakartaSans(
+                        textStyle: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w600)),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard()
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Murah Terus",
+                    style: GoogleFonts.plusJakartaSans(
+                        textStyle: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w600)),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard()
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Sekitarmu",
+                    style: GoogleFonts.plusJakartaSans(
+                        textStyle: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w600)),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard(),
+                    recomendCard()
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
               ),
             ]),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              width: 343,
-              height: 135,
-              child: Image.asset('assets/logos/BaseAds.png'),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-                width: 343,
-                height: 48,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.grey),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(top: 20),
-                      prefixIcon: Padding(
-                        padding: const EdgeInsetsDirectional.only(start: 12.0),
-                        child: Icon(Icons.search),
-                      ),
-                      hintText: "Cari makan yang kamu inginkan",
-                      hintStyle: GoogleFonts.plusJakartaSans(
-                          fontSize: 14, color: Colors.black),
-                      fillColor: Colors.grey,
-                      filled: true,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(12))),
-                )),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Text(
-                  "Rekomendasi",
-                  style: GoogleFonts.plusJakartaSans(
-                      textStyle:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard()
-                ],
-              ),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Murah Terus",
-                  style: GoogleFonts.plusJakartaSans(
-                      textStyle:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard()
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Sekitarmu",
-                  style: GoogleFonts.plusJakartaSans(
-                      textStyle:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard(),
-                  recomendCard()
-                ],
-              ),
-            )
-          ]),
-        ),
-      )),
-    );
+          ),
+        )),
+      );
+    });
   }
 }
 

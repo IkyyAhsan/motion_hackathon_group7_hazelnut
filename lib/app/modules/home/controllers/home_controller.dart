@@ -3,21 +3,10 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   //TODO: Implement HomeController
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  var SliderIndex = 0;
 
-  @override
-  void onReady() {
-    super.onReady();
+  void ChangeSliderIndex(int index) {
+    SliderIndex = index;
+    update();
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
