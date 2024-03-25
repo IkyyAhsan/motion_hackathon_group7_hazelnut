@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 
 class KStatusHaveAccount extends StatelessWidget {

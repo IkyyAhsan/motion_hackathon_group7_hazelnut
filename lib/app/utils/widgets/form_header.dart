@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_strings.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 
 class KFormHeader extends StatelessWidget {
   const KFormHeader({
