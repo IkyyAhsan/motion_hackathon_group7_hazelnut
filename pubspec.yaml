@@ -21,6 +21,7 @@ dependencies:
 
   # State Management
   get: ^4.6.6
+  google_fonts: ^6.2.1
 
   # -------------------- PACKAGES END -------------------- #
 
@@ -32,10 +33,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# -------------------- LOCAL ASSETS -------------------- #
+  # -------------------- LOCAL ASSETS -------------------- #
   assets:
     - assets/images/
     - assets/logos/
-
-
-
