@@ -7,7 +7,6 @@ class NavbarView extends GetView<NavbarController> {
   const NavbarView({super.key});
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(NavbarController());
     return GetBuilder<NavbarController>(builder: (controller) {
       return Scaffold(
         bottomNavigationBar: Obx(
@@ -19,10 +18,10 @@ class NavbarView extends GetView<NavbarController> {
             backgroundColor: Colors.white,
             indicatorColor: Colors.white.withOpacity(0.1),
             destinations: const [
-              NavigationDestination(icon: Icon(FluentIcons.home_12_regular, size: 18,), label: '', selectedIcon: Icon(FluentIcons.home_12_filled),),
-              NavigationDestination(icon: Icon(FluentIcons.search_12_regular), label: '', selectedIcon: Icon(FluentIcons.search_12_filled),),
-              NavigationDestination(icon: Icon(FluentIcons.receipt_16_regular), label: '', selectedIcon: Icon(FluentIcons.receipt_20_filled),),
-              NavigationDestination(icon: Icon(FluentIcons.person_12_regular), label: '', selectedIcon: Icon(FluentIcons.person_12_filled),)
+              NavigationDestination(icon: Icon(FluentIcons.home_24_regular, size: 18,), label: '', selectedIcon: Icon(FluentIcons.home_24_filled),),
+              NavigationDestination(icon: Icon(FluentIcons.search_24_regular), label: '', selectedIcon: Icon(FluentIcons.search_24_filled),),
+              NavigationDestination(icon: Icon(FluentIcons.receipt_24_regular), label: '', selectedIcon: Icon(FluentIcons.receipt_24_filled),),
+              NavigationDestination(icon: Icon(FluentIcons.person_24_regular), label: '', selectedIcon: Icon(FluentIcons.person_24_filled),)
             ],
           ),
         ),

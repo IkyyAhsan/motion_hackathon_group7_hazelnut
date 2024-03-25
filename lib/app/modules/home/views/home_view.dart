@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/home/views/widgets/recommended_card.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
@@ -37,12 +39,15 @@ class HomeView extends GetView<HomeController> {
                         textStyle: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.w600)),
                   ),
-                  const SizedBox(
-                    width: 52,
-                    height: 52,
-                    child: Image(
-                      image: AssetImage(
-                        KImages.notifLogo))),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Routes.SHOPPING_CART),
+                    child: const SizedBox(
+                      width: 52,
+                      height: 52,
+                      child: Image(
+                        image: AssetImage(
+                          KImages.notifLogo))),
+                  ),
                 ],
               ),
               const SizedBox(

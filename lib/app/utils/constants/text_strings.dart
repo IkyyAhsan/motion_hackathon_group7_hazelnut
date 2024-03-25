@@ -13,6 +13,7 @@ class KTexts {
   static const String recommendation = "Rekomendasi";
   static const String alwaysChip = "Murah Terus";
   static const String aroundYou = "Sekitarmu";
+  static const String shoppingCart = "Keranjang Kamu";
 
   // Authentication Form
   static const String login = "Masuk";
