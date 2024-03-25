@@ -15,38 +15,49 @@ class LoginScreenView extends GetView<LoginScreenController> {
   const LoginScreenView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 94, left: 16, bottom: 16, right: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // -- Header
-              const KFormHeader(headerTitle: KTexts.loginTitle, headerDesc: KTexts.loginDesc,),
+    return Form(
+      key: controller.loginFormKey,
 
-              // Form
-              const KLoginForm(),
-              const SizedBox(height: 8,),
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 94, left: 16, bottom: 16, right: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // -- Header
+                const KFormHeader(headerTitle: KTexts.loginTitle, headerDesc: KTexts.loginDesc,),
+      
+                // Form
+                const KLoginForm(),
+                const SizedBox(height: 8,),
 
-              // Login Button
-              KMainButton(buttonName: KTexts.login, onPressed: () => Get.toNamed(Routes.HOME),),
-              const SizedBox(height: 16,),
-
-              // Dont Have Account Button
-              KStatusHaveAccount(status: KTexts.dontHaveAccount, loginOrRegister: KTexts.registerHere, onPressed: () => Get.toNamed(Routes.REGISTER_SCREEN),),
-              const SizedBox(height: 20,),
-
-              // Divider
-              const KFromDivider(),
-              const SizedBox(height: 20,),
-              
-              // Google Sign-in
-              const KContinueWithGoogle(),
-            ],
-          ),
-          ),
-      )
+                const KForgetPassword(),
+                const SizedBox(height: 8,),
+      
+                // Login Button
+                KMainButton(buttonName: KTexts.login, onPressed: () {
+                  if (controller.loginFormKey.currentState!.validate()){
+                    Get.toNamed(Routes.NAVBAR);
+                  }
+                },),
+                const SizedBox(height: 16,),
+      
+                // Dont Have Account Button
+                KStatusHaveAccount(status: KTexts.dontHaveAccount, loginOrRegister: KTexts.registerHere, onPressed: () => Get.toNamed(Routes.REGISTER_SCREEN),),
+                const SizedBox(height: 20,),
+      
+                // Divider
+                const KFromDivider(),
+                const SizedBox(height: 20,),
+                
+                // Google Sign-in
+                const KContinueWithGoogle(),
+              ],
+            ),
+            ),
+        )
+      ),
     );
   }
 }

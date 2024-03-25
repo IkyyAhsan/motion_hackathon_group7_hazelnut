@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../controllers/onboarding_screen_controller.dart';
 
-class OnboardingScreenView extends GetView<OnboardingScreenController> {
-  const OnboardingScreenView({super.key});
+import 'package:get/get.dart';
+
+import '../controllers/profile_screen_controller.dart';
+
+class ProfileScreenView extends GetView<ProfileScreenController> {
+  const ProfileScreenView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OnboardingScreenView'),
+        title: const Text('ProfileScreenView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'OnboardingScreenView is working',
+          'ProfileScreenView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class OnboardingScreenController extends GetxController {
+class HistoryScreenController extends GetxController {
   //
 
   final count = 0.obs;

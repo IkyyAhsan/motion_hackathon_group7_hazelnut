@@ -1,16 +1,21 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:motion_hackathon_group7_hazelnut/app/modules/home/views/widgets/recommended_card.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_strings.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
+import 'package:sticky_headers/sticky_headers.dart';
 import '../controllers/home_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
 class HomeView extends GetView<HomeController> {
+  @override
   final HomeController controller = Get.put(HomeController());
+
+  HomeView({super.key});
+  @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(builder: (controller) {
       return Scaffold(
@@ -19,306 +24,200 @@ class HomeView extends GetView<HomeController> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(children: [
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Halo, Rizal",
+                    KTexts.rizalCanEatToday,
+                    maxLines: 2,
                     style: GoogleFonts.plusJakartaSans(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.w600)),
                   ),
+                  const SizedBox(
+                    width: 52,
+                    height: 52,
+                    child: Image(
+                      image: AssetImage(
+                        KImages.notifLogo))),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 4,
               ),
-              Stack(children: [
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(999),
-                          child: SizedBox(
-                              width: 80,
-                              height: 80,
-                              child: Image.asset('assets/logos/notif.png')),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Mau makan apa hari ini?",
-                      style: GoogleFonts.plusJakartaSans(
-                          textStyle: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700)),
-                    ),
-                    SizedBox(
-                      width: 64,
-                    ),
-                  ],
-                ),
-              ]),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CarouselSlider(
                 options: CarouselOptions(
                   height: 135.0,
                   onPageChanged: (index, reason) =>
-                      controller.ChangeSliderIndex(index),
+                      controller.changeSliderIndex(index),
                 ),
                 items: [1, 2, 3, 4, 5].map((i) {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
                         width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        decoration: BoxDecoration(color: Colors.white),
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: const BoxDecoration(color: Colors.white),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16),
-                          child: Image.asset(
-                            'assets/logos/BaseAds.png', // Ganti dengan path gambar Anda
-                            fit:
-                                BoxFit.cover, // Sesuaikan dengan kebutuhan Anda
+                          child: const Image(image: AssetImage(KImages.banner1),
+                            fit: BoxFit.cover,
+                          )
+                            
                           ),
-                        ),
-                      );
+                        );
                     },
                   );
                 }).toList(),
               ),
               DotsIndicator(
                 dotsCount: 5,
-                position: controller.SliderIndex,
+                position: controller.sliderIndex,
               ),
-              // Container(
-              //   width: 343,
-              //   height: 135,
-              //   child: Image.asset('assets/logos/BaseAds.png'),
-              // ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
-                  width: 343,
-                  height: 48,
+                  width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(top: 20),
-                        prefixIcon: Padding(
-                          padding:
-                              const EdgeInsetsDirectional.only(start: 12.0),
-                          child: Icon(Icons.search),
-                        ),
-                        hintText: "Cari makan yang kamu inginkan",
-                        hintStyle: GoogleFonts.plusJakartaSans(
-                            fontSize: 14, color: Colors.black),
-                        fillColor: Colors.grey,
-                        filled: true,
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12))),
-                  )),
-              SizedBox(
+                      color: KColors.formColor),
+                  child: StickyHeader(
+                    header: Container(
+                      color: Colors.white,
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.only(top: 20),
+                            prefixIcon: const Padding(
+                              padding:
+                                  EdgeInsetsDirectional.only(start: 12.0),
+                              child: Icon(Icons.search, color: KColors.labelTextColor,),
+                            ),
+                            hintText: KTexts.eatSearch,
+                            hintStyle: GoogleFonts.plusJakartaSans(
+                                fontSize: 14, color: KColors.labelTextColor),
+                            fillColor: KColors.formColor,
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(12))),
+                      ),
+                    ),
+                    content: Column(
+                      children: [
+                        const SizedBox(
                 height: 20,
               ),
               Row(
                 children: [
                   Text(
-                    "Rekomendasi",
+                    KTexts.recommendation,
                     style: GoogleFonts.plusJakartaSans(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w600)),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
+                clipBehavior: Clip.none,
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard()
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "Murah Terus",
+                    KTexts.alwaysChip,
                     style: GoogleFonts.plusJakartaSans(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w600)),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
+                clipBehavior: Clip.none,
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard()
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard()
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "Sekitarmu",
+                    KTexts.aroundYou,
                     style: GoogleFonts.plusJakartaSans(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w600)),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
+                clipBehavior: Clip.none,
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard(),
-                    recomendCard()
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
+                    RecommendCard(),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 30,
+              const SizedBox(
+                height: 20,
               ),
-            ]),
+              const Image(image: AssetImage(KImages.invitationBanner), width: 343, height: 130,),
+              const SizedBox(
+                height: 16,
+              )
+                      ],
+                    ),
+                )
+                  ),
+            ]
+            ),
           ),
         )),
       );
     });
-  }
-}
-
-class recomendCard extends StatelessWidget {
-  const recomendCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        children: [
-          Container(
-            width: 229,
-            height: 147,
-            child: ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(16.0),
-                  topRight: Radius.circular(16.0),
-                ),
-                child: Image.asset('assets/logos/wargot.png')),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(16),
-                  bottomRight: Radius.circular(16)),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.01),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3)),
-              ],
-            ),
-            width: 229,
-            height: 85,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Wargot',
-                        style: GoogleFonts.plusJakartaSans(
-                            textStyle: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
-                      ),
-                      SizedBox(
-                        width: 85,
-                      ),
-                      Image.asset('assets/logos/Star.png'),
-                      Text(
-                        '5.0',
-                        style: GoogleFonts.plusJakartaSans(
-                            textStyle: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.grey)),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        '1 km',
-                        style: GoogleFonts.plusJakartaSans(
-                            textStyle: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Image.asset('assets/logos/eclipse.png'),
-                      ),
-                      Text(
-                        '12 menit',
-                        style: GoogleFonts.plusJakartaSans(
-                            textStyle: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
-    );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class OnboardingScreenController extends GetxController {
+class ProductScreenController extends GetxController {
   //
 
   final count = 0.obs;

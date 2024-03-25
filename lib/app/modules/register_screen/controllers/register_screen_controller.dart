@@ -8,7 +8,7 @@ class RegisterScreenController extends GetxController {
   final username = TextEditingController();
   final password = TextEditingController();
   final confirmPassword = TextEditingController();
-  GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final registerFormKey = GlobalKey<FormState>();
   
 }
 

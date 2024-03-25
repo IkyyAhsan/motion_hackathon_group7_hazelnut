@@ -14,37 +14,44 @@ class RegisterScreenView extends GetView<RegisterScreenController> {
   const RegisterScreenView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 94, left: 16, bottom: 16, right: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Header
-              const KFormHeader(headerTitle: KTexts.registerTitle, headerDesc: KTexts.registerDesc,),
-
-              // Form
-              const KRegisterForm(),
-
-              // Register Button
-              KMainButton(buttonName: KTexts.register, onPressed: () => Get.toNamed(Routes.HOME),),
-              const SizedBox(height: 16,),
-
-              // Already Have Account Button
-              KStatusHaveAccount(status: KTexts.alreadyHaveAccount, loginOrRegister: KTexts.login, onPressed: () => Get.toNamed(Routes.LOGIN_SCREEN),),
-              const SizedBox(height: 20,),
-
-              // Divider
-              const KFromDivider(),
-              const SizedBox(height: 20,),
-              
-              // Google Sign-in
-              const KContinueWithGoogle(),
-            ],
-          ),
-          ),
-      )
+    return Form(
+      key: controller.registerFormKey,
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 94, left: 16, bottom: 16, right: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Header
+                const KFormHeader(headerTitle: KTexts.registerTitle, headerDesc: KTexts.registerDesc,),
+      
+                // Form
+                const KRegisterForm(),
+      
+                // Register Button
+                KMainButton(buttonName: KTexts.register, onPressed: () {
+                    if (controller.registerFormKey.currentState!.validate()){
+                      Get.toNamed(Routes.HOME);
+                    }
+                }),
+                const SizedBox(height: 16,),
+      
+                // Already Have Account Button
+                KStatusHaveAccount(status: KTexts.alreadyHaveAccount, loginOrRegister: KTexts.login, onPressed: () => Get.toNamed(Routes.LOGIN_SCREEN),),
+                const SizedBox(height: 20,),
+      
+                // Divider
+                const KFromDivider(),
+                const SizedBox(height: 20,),
+                
+                // Google Sign-in
+                const KContinueWithGoogle(),
+              ],
+            ),
+            ),
+        )
+      ),
     );
   }
 }

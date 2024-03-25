@@ -14,58 +14,69 @@ class KLoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginScreenController());
-    return Form(
-      child: Column(
-        children: [
-
-          // Username
-          TextFormField(
-            controller: controller.username,
-            decoration: InputDecoration(
-              labelText: KTexts.usernameText,
-              labelStyle: GoogleFonts.plusJakartaSans(fontSize: 16, color: KColors.labelTextColor),
-              fillColor: KColors.formColor,
-              filled: true,
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: KColors.primaryColor)
-              ),
+    return Column(
+      children: [
+    
+        // Username
+        TextFormField(
+          controller: controller.username,
+          validator: (value) {
+            if (value == null || value.isEmpty){
+              return 'Username tidak boleh kosong';
+            }
+            return null;
+          },
+          decoration: InputDecoration(
+            labelText: KTexts.usernameText,
+            labelStyle: GoogleFonts.plusJakartaSans(fontSize: 16, color: KColors.labelTextColor),
+            fillColor: KColors.formColor,
+            filled: true,
+            border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: KColors.primaryColor)
             ),
           ),
-          const SizedBox(height: 16,),
-
-          // Password
-          TextFormField(
-            controller: controller.password,
-            validator: (value){
-              if (value == null || value.isEmpty){
-                return 'Password tidak boleh kosong.';
-              }
-            },
-            obscureText: true,
-            decoration: InputDecoration(
-              labelText: KTexts.passwordText,
-              labelStyle: GoogleFonts.plusJakartaSans(fontSize: 16, color: KColors.labelTextColor),
-              fillColor: KColors.formColor,
-              filled: true,
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(8)
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: KColors.primaryColor)
-              ),
-              suffixIcon: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(FluentIcons.eye_off_20_regular),
-              ),
+        ),
+        const SizedBox(height: 16,),
+    
+        // Password
+        TextFormField(
+          controller: controller.password,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          validator: (value){
+            if (value == null || value.isEmpty){
+              return 'ⓘ Oops, password kamu salah';
+            } else if (value.length < 6){
+              return 'Password terdiri dari minimal 6 karakter';
+            } 
+            return null;
+          },
+          obscureText: true,
+          decoration: InputDecoration(
+            labelText: KTexts.passwordText,
+            labelStyle: GoogleFonts.plusJakartaSans(fontSize: 16, color: KColors.labelTextColor),
+            fillColor: KColors.formColor,
+            filled: true,
+            border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(8)
             ),
-          )
-        ],
-      ),
+            focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: KColors.primaryColor)
+            ),
+            suffixIcon: IconButton(
+              onPressed: (){}, 
+              icon: const Icon(FluentIcons.eye_off_20_regular),
+            ),
+          ),
+          style: GoogleFonts.plusJakartaSans(
+            fontSize: 14
+          ),
+        )
+      ],
     );
   }
 }

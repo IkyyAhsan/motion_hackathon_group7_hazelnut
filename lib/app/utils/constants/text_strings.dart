@@ -10,6 +10,9 @@ class KTexts {
 
   // Global Texts
   static const String orText = "Atau";
+  static const String recommendation = "Rekomendasi";
+  static const String alwaysChip = "Murah Terus";
+  static const String aroundYou = "Sekitarmu";
 
   // Authentication Form
   static const String login = "Masuk";
@@ -23,5 +26,8 @@ class KTexts {
   static const String forgetPasswordTitle = "Lupa password";
   static const String registerHere = "Daftar disini";
   static const String continueWithGoogle = "Lanjutkan dengan Google";
+  static const String rizalCanEatToday = "Halo Rizal\nMau makan apa hari ini?";
+  static const String eatToday = "Mau makan apa hari ini?";
+  static const String eatSearch = "Cari makan yang kamu inginkan";
   
 }
