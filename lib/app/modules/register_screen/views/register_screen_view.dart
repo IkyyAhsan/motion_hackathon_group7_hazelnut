@@ -47,7 +47,7 @@ class RegisterScreenView extends GetView<RegisterScreenController> {
               const SizedBox(height: 16,),
 
               // Already Have Account Button
-              KStatusHaveAccount(status: KTexts.alreadyHaveAccount, loginOrRegister: KTexts.login, onPressed: () => Get.toNamed(Routes.HOME),),
+              KStatusHaveAccount(status: KTexts.alreadyHaveAccount, loginOrRegister: KTexts.login, onPressed: () => Get.toNamed(Routes.LOGIN_SCREEN),),
               const SizedBox(height: 20,),
 
               // Divider

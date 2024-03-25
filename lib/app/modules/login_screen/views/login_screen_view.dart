@@ -43,7 +43,7 @@ class LoginScreenView extends GetView<LoginScreenController> {
               const SizedBox(height: 16,),
 
               // Dont Have Account Button
-              KStatusHaveAccount(status: KTexts.dontHaveAccount, loginOrRegister: KTexts.registerStatus, onPressed: () => Get.toNamed(Routes.REGISTER_SCREEN),),
+              KStatusHaveAccount(status: KTexts.dontHaveAccount, loginOrRegister: KTexts.registerHere, onPressed: () => Get.toNamed(Routes.REGISTER_SCREEN),),
               const SizedBox(height: 20,),
 
               // Divider
