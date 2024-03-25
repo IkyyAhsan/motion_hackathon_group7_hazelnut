@@ -10,6 +10,7 @@ class KTexts {
   static const String forgetPasswordTitle = "Lupa password";
   static const String login = "Masuk";
   static const String register = "Daftar";
+  static const String registerStatus = "Daftar disini";
   static const String dontHaveAccount = "Belum memiliki akun?";
   static const String alreadyHaveAccount = "Sudah memiliki akun?";
   static const String registerHere = "Daftar disini";

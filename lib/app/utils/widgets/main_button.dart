@@ -4,10 +4,11 @@ import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart
 
 class KMainButton extends StatelessWidget {
   const KMainButton({
-    super.key, required this.buttonName,
+    super.key, required this.buttonName, required this.onPressed,
   });
 
   final String buttonName;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class KMainButton extends StatelessWidget {
       width: double.infinity,
       height: 52,
       child: ElevatedButton(
-        onPressed: (){}, 
+        onPressed: onPressed, 
         style: ButtonStyle(shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)
