@@ -82,10 +82,14 @@ class HomeView extends GetView<HomeController> {
                       return Container(
                         width: MediaQuery.of(context).size.width,
                         margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        decoration: BoxDecoration(color: Colors.amber),
-                        child: Image.asset(
-                          'assets/logos/BaseAds.png', // Ganti dengan path gambar Anda
-                          fit: BoxFit.cover, // Sesuaikan dengan kebutuhan Anda
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: Image.asset(
+                            'assets/logos/BaseAds.png', // Ganti dengan path gambar Anda
+                            fit:
+                                BoxFit.cover, // Sesuaikan dengan kebutuhan Anda
+                          ),
                         ),
                       );
                     },
