@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/dont_have_account.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/forget_password.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/login_form_divider.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/dont_have_account.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/forget_password.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_form_divider.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/form_header.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/password_form.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/string_form.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/continue_with_google.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/main_button.dart';
@@ -26,16 +25,8 @@ class LoginScreenView extends GetView<LoginScreenController> {
               // -- Header
               const KFormHeader(headerTitle: KTexts.loginTitle, headerDesc: KTexts.loginDesc,),
 
-              // Username
-              const KStringForm(formName: KTexts.usernameText,),
-              const SizedBox(height: 16,),
-
-              // Password
-              const KPasswordForm(formName: KTexts.passwordText,),
-              const SizedBox(height: 8,),
-
-              // Lupa Password
-              const KForgetPassword(),
+              // Form
+              const KLoginForm(),
               const SizedBox(height: 8,),
 
               // Login Button

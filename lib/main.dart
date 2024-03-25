@@ -8,7 +8,7 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Application",
+      title: "KenyangIn App",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),

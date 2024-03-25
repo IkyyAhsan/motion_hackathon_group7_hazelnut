@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/dont_have_account.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/login_form_divider.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/password_form.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/widgets/string_form.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/dont_have_account.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_form_divider.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/register_screen/views/widgets/register_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/continue_with_google.dart';
@@ -26,21 +24,8 @@ class RegisterScreenView extends GetView<RegisterScreenController> {
               // Header
               const KFormHeader(headerTitle: KTexts.registerTitle, headerDesc: KTexts.registerDesc,),
 
-              // Nama Lengkap
-              const KStringForm(formName: KTexts.fullNameText),
-              const SizedBox(height: 16,),
-
-              // Nama Lengkap
-              const KStringForm(formName: KTexts.usernameText),
-              const SizedBox(height: 16,),
-
-              // Password
-              const KPasswordForm(formName: KTexts.passwordText,),
-              const SizedBox(height: 16,),
-
-              // Confirm Password
-              const KPasswordForm(formName: KTexts.confirmPasswordText),
-              const SizedBox(height: 20,),
+              // Form
+              const KRegisterForm(),
 
               // Register Button
               KMainButton(buttonName: KTexts.register, onPressed: () => Get.toNamed(Routes.HOME),),
