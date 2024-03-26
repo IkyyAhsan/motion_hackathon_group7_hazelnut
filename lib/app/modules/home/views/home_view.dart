@@ -94,23 +94,19 @@ class HomeView extends GetView<HomeController> {
                     header: GestureDetector(
                       onTap: () => Get.toNamed(Routes.SEARCH_PRESS),
                       child: Container(
-                        color: Colors.white,
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: Row(
-                          children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsetsDirectional.only(start: 12.0),
-                              child: Icon(Icons.search, color: KColors.labelTextColor),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.grey[200], // Ganti dengan warna yang Anda inginkan
+                            prefixIcon: const Icon(Icons.search, color: KColors.labelTextColor), // Ganti warna ikon jika diperlukan
+                            hintText: 'Cari makanan yang kamu inginkan',
+                            hintStyle: TextStyle(color: KColors.labelTextColor),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              borderSide: BorderSide.none, // Menghilangkan warna border
                             ),
-                            const SizedBox(width: 8.0),
-                            Text(
-                              KTexts.eatSearch,
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 14,
-                                color: KColors.labelTextColor,
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
