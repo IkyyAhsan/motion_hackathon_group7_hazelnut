@@ -1,16 +1,17 @@
 // Menyimpan seluruh Teks yang dibutuhkan
 
 class KTexts {
-
   // Authentication Headings
   static const String loginTitle = "Selamat Datang!";
   static const String loginDesc = "Silahkan masuk untuk memulai.";
   static const String registerTitle = "Buat Akun";
-  static const String registerDesc = "Silahkan mengisi form berikut dengan benar.";
+  static const String registerDesc =
+      "Silahkan mengisi form berikut dengan benar.";
 
   // Global Texts
   static const String orText = "Atau";
   static const String recommendation = "Rekomendasi";
+  static const String populer = "Populer";
   static const String alwaysChip = "Murah Terus";
   static const String aroundYou = "Sekitarmu";
   static const String shoppingCart = "Keranjang Kamu";
@@ -30,5 +31,4 @@ class KTexts {
   static const String rizalCanEatToday = "Halo Rizal\nMau makan apa hari ini?";
   static const String eatToday = "Mau makan apa hari ini?";
   static const String eatSearch = "Cari makan yang kamu inginkan";
-  
 }

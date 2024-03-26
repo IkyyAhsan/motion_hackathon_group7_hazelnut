@@ -42,11 +42,9 @@ class HomeView extends GetView<HomeController> {
                   GestureDetector(
                     onTap: () => Get.toNamed(Routes.SHOPPING_CART),
                     child: const SizedBox(
-                      width: 52,
-                      height: 52,
-                      child: Image(
-                        image: AssetImage(
-                          KImages.notifLogo))),
+                        width: 52,
+                        height: 52,
+                        child: Image(image: AssetImage(KImages.notifLogo))),
                   ),
                 ],
               ),
@@ -70,13 +68,12 @@ class HomeView extends GetView<HomeController> {
                         margin: const EdgeInsets.symmetric(horizontal: 5.0),
                         decoration: const BoxDecoration(color: Colors.white),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(16),
-                          child: const Image(image: AssetImage(KImages.banner1),
-                            fit: BoxFit.cover,
-                          )
-                            
-                          ),
-                        );
+                            borderRadius: BorderRadius.circular(16),
+                            child: const Image(
+                              image: AssetImage(KImages.banner1),
+                              fit: BoxFit.cover,
+                            )),
+                      );
                     },
                   );
                 }).toList(),
@@ -101,9 +98,11 @@ class HomeView extends GetView<HomeController> {
                         decoration: InputDecoration(
                             contentPadding: const EdgeInsets.only(top: 20),
                             prefixIcon: const Padding(
-                              padding:
-                                  EdgeInsetsDirectional.only(start: 12.0),
-                              child: Icon(Icons.search, color: KColors.labelTextColor,),
+                              padding: EdgeInsetsDirectional.only(start: 12.0),
+                              child: Icon(
+                                Icons.search,
+                                color: KColors.labelTextColor,
+                              ),
                             ),
                             hintText: KTexts.eatSearch,
                             hintStyle: GoogleFonts.plusJakartaSans(
@@ -118,108 +117,113 @@ class HomeView extends GetView<HomeController> {
                     content: Column(
                       children: [
                         const SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Text(
-                    KTexts.recommendation,
-                    style: GoogleFonts.plusJakartaSans(
-                        textStyle: const TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600)),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const SingleChildScrollView(
-                clipBehavior: Clip.none,
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    KTexts.alwaysChip,
-                    style: GoogleFonts.plusJakartaSans(
-                        textStyle: const TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600)),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const SingleChildScrollView(
-                clipBehavior: Clip.none,
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard()
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    KTexts.aroundYou,
-                    style: GoogleFonts.plusJakartaSans(
-                        textStyle: const TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600)),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const SingleChildScrollView(
-                clipBehavior: Clip.none,
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                    RecommendCard(),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Image(image: AssetImage(KImages.invitationBanner), width: 343, height: 130,),
-              const SizedBox(
-                height: 16,
-              )
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              KTexts.recommendation,
+                              style: GoogleFonts.plusJakartaSans(
+                                  textStyle: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const SingleChildScrollView(
+                          clipBehavior: Clip.none,
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              KTexts.alwaysChip,
+                              style: GoogleFonts.plusJakartaSans(
+                                  textStyle: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const SingleChildScrollView(
+                          clipBehavior: Clip.none,
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard()
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              KTexts.aroundYou,
+                              style: GoogleFonts.plusJakartaSans(
+                                  textStyle: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const SingleChildScrollView(
+                          clipBehavior: Clip.none,
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                              RecommendCard(),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Image(
+                          image: AssetImage(KImages.invitationBanner),
+                          width: 343,
+                          height: 130,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        )
                       ],
                     ),
-                )
-                  ),
-            ]
-            ),
+                  )),
+            ]),
           ),
         )),
       );
