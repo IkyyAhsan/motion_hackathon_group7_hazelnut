@@ -94,25 +94,27 @@ class HomeView extends GetView<HomeController> {
                       borderRadius: BorderRadius.circular(12),
                       color: KColors.formColor),
                   child: StickyHeader(
-                    header: Container(
-                      color: Colors.white,
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.only(top: 20),
-                            prefixIcon: const Padding(
-                              padding:
-                                  EdgeInsetsDirectional.only(start: 12.0),
-                              child: Icon(Icons.search, color: KColors.labelTextColor,),
+                    header: GestureDetector(
+                      onTap: () => Get.toNamed(Routes.SEARCH_PRESS),
+                      child: Container(
+                        color: Colors.white,
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: Row(
+                          children: <Widget>[
+                            const Padding(
+                              padding: EdgeInsetsDirectional.only(start: 12.0),
+                              child: Icon(Icons.search, color: KColors.labelTextColor),
                             ),
-                            hintText: KTexts.eatSearch,
-                            hintStyle: GoogleFonts.plusJakartaSans(
-                                fontSize: 14, color: KColors.labelTextColor),
-                            fillColor: KColors.formColor,
-                            filled: true,
-                            border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.circular(12))),
+                            const SizedBox(width: 8.0),
+                            Text(
+                              KTexts.eatSearch,
+                              style: GoogleFonts.plusJakartaSans(
+                                fontSize: 14,
+                                color: KColors.labelTextColor,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     content: Column(

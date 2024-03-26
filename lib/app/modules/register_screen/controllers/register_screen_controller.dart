@@ -10,5 +10,11 @@ class RegisterScreenController extends GetxController {
   final confirmPassword = TextEditingController();
   final registerFormKey = GlobalKey<FormState>();
   
+  void clearForm(){
+    fullname.clear();
+    username.clear();
+    password.clear();
+    confirmPassword.clear();
+  }
 }
 

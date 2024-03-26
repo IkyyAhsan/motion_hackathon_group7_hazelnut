@@ -7,4 +7,9 @@ class LoginScreenController extends GetxController {
   final username = TextEditingController();
   final password = TextEditingController();
   final loginFormKey = GlobalKey<FormState>();
+
+  void clearForm(){
+    username.clear();
+    password.clear();
+  }
 }

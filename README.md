@@ -25,14 +25,13 @@ flutter run
 Akun demo
 
 ```bash
-Username : Rizal
+Username : rizal
 Password : sayarijal
 ```
 
 ## Screenshots
 
 ![Splash Screen](./screenshot/splash_screen.jpeg)
-![Splash Screen2](./screenshot/splash_screen2.jpeg)
 ![Welcome Before Login](./screenshot/welcome_before_login.jpeg)
 
 ![Register](./screenshot/register.jpeg)

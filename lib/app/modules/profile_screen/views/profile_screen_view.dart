@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/controllers/login_screen_controller.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/views/login_screen_view.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 
 import '../controllers/profile_screen_controller.dart';
 
@@ -9,16 +11,13 @@ class ProfileScreenView extends GetView<ProfileScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ProfileScreenView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'ProfileScreenView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+  appBar: AppBar(
+    title: const Text('ProfileScreenView'),
+    centerTitle: true,
+  ),
+  body: Center(
+    child: Text('Profile Screen')
+  ),
+);
   }
 }

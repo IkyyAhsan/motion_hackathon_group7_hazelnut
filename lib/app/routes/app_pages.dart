@@ -16,6 +16,8 @@ import '../modules/profile_screen/bindings/profile_screen_binding.dart';
 import '../modules/profile_screen/views/profile_screen_view.dart';
 import '../modules/register_screen/bindings/register_screen_binding.dart';
 import '../modules/register_screen/views/register_screen_view.dart';
+import '../modules/search_press/bindings/search_press_binding.dart';
+import '../modules/search_press/views/search_press_view.dart';
 import '../modules/shopping_cart/bindings/shopping_cart_binding.dart';
 import '../modules/shopping_cart/views/shopping_cart_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
@@ -79,6 +81,11 @@ class AppPages {
       name: _Paths.SHOPPING_CART,
       page: () => const ShoppingCartView(),
       binding: ShoppingCartBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH_PRESS,
+      page: () => const SearchPressView(),
+      binding: SearchPressBinding(),
     ),
   ];
 }

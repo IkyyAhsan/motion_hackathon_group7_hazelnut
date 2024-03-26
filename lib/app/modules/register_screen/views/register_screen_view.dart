@@ -9,6 +9,7 @@ import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_string
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/continue_with_google.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/form_header.dart';
 import '../controllers/register_screen_controller.dart';
+import 'package:get_storage/get_storage.dart';
 
 class RegisterScreenView extends GetView<RegisterScreenController> {
   const RegisterScreenView({super.key});
@@ -32,7 +33,10 @@ class RegisterScreenView extends GetView<RegisterScreenController> {
                 // Register Button
                 KRegisterButton(onPressed: () {
                     if (controller.registerFormKey.currentState!.validate()){
-                      Get.toNamed(Routes.HOME);
+                      GetStorage().write('username', controller.username.text);
+                      GetStorage().write('password', controller.password.text);
+
+                      Get.toNamed(Routes.NAVBAR);
                     }
                 }),
                 const SizedBox(height: 16,),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/dont_have_account.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/forget_password.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_form_divider.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/form_header.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
@@ -38,7 +40,15 @@ class LoginScreenView extends GetView<LoginScreenController> {
                 // Login Button
                 KLoginButton(onPressed: () {
                   if (controller.loginFormKey.currentState!.validate()){
-                    Get.toNamed(Routes.NAVBAR);
+                    String? storedUsername = GetStorage().read('username');
+                    String? storedPassword = GetStorage().read('password');
+
+                    if (controller.username.text == storedUsername && controller.password.text == storedPassword) {
+
+                      Get.toNamed(Routes.NAVBAR);
+                    } else {
+                      Get.snackbar('Error', 'Username atau password salah.', backgroundColor: Colors.white, borderColor: KColors.primaryColor);
+                    }
                   }
                 },),
                 const SizedBox(height: 16,),
