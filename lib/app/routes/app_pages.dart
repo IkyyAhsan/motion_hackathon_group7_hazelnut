@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/checkout_screen/bindings/checkout_screen_binding.dart';
+import '../modules/checkout_screen/views/checkout_screen_view.dart';
 import '../modules/history_screen/bindings/history_screen_binding.dart';
 import '../modules/history_screen/views/history_screen_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -29,7 +31,7 @@ class AppPages {
   AppPages._();
 
   // ignore: constant_identifier_names
-  static const INITIAL = Routes.SPLASH_SCREEN;
+  static const INITIAL = Routes.ONBOARDING_SCREEN;
 
   static final routes = [
     GetPage(
@@ -86,6 +88,11 @@ class AppPages {
       name: _Paths.SEARCH_PRESS,
       page: () => const SearchPressView(),
       binding: SearchPressBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHECKOUT_SCREEN,
+      page: () => const CheckoutScreenView(),
+      binding: CheckoutScreenBinding(),
     ),
   ];
 }

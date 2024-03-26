@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/image_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
@@ -217,7 +218,7 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
                           height: 36,
                           width: 135,
                           child: ElevatedButton(
-                            onPressed: (){}, 
+                            onPressed: () => Get.toNamed(Routes.CHECKOUT_SCREEN), 
                             style: ButtonStyle(
                               shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(

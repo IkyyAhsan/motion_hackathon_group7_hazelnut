@@ -16,6 +16,7 @@ abstract class Routes {
   static const PRODUCT_SCREEN = _Paths.PRODUCT_SCREEN;
   static const SHOPPING_CART = _Paths.SHOPPING_CART;
   static const SEARCH_PRESS = _Paths.SEARCH_PRESS;
+  static const CHECKOUT_SCREEN = _Paths.CHECKOUT_SCREEN;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const PRODUCT_SCREEN = '/product_screen';
   static const SHOPPING_CART = '/shopping-cart';
   static const SEARCH_PRESS = '/search-press';
+  static const CHECKOUT_SCREEN = '/checkout-screen';
 }
