@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/register_screen/controllers/register_screen_controller.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
+import 'package:get_storage/get_storage.dart';
 
 class KRegisterForm extends StatelessWidget {
   const KRegisterForm({
@@ -13,13 +14,13 @@ class KRegisterForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(RegisterScreenController());
+    final registerController = Get.put(RegisterScreenController());
     return Column(
       children: [
     
         // Nama Lengkap
         TextFormField(
-          controller: controller.fullname,
+          controller: registerController.fullname,
           validator: (value) {
             if (value == null || value.isEmpty){
               return 'Nama lengkap tidak boleh kosong';
@@ -44,7 +45,7 @@ class KRegisterForm extends StatelessWidget {
     
         // Username
         TextFormField(
-          controller: controller.username,
+          controller: registerController.username,
           validator: (value) {
             if (value == null || value.isEmpty){
               return 'Username tidak boleh kosong';
@@ -69,7 +70,7 @@ class KRegisterForm extends StatelessWidget {
     
         // Password
         TextFormField(
-          controller: controller.password,
+          controller: registerController.password,
           validator: (value){
             if (value == null || value.isEmpty){
               return 'Password tidak boleh kosong.';
@@ -101,13 +102,13 @@ class KRegisterForm extends StatelessWidget {
     
         // Confirm Password
         TextFormField(
-          controller: controller.confirmPassword,
+          controller: registerController.confirmPassword,
           validator: (value){
             if (value == null || value.isEmpty){
               return 'Password tidak boleh kosong.';
             } else if (value.length < 6){
               return 'Password terdiri dari minimal 6 karakter';
-            } else if (value != controller.password.text){
+            } else if (value != registerController.password.text){
               return 'Password tidak cocok';
             }
             return null;

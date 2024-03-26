@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/dont_have_account.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_form_divider.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/register_screen/views/widgets/register_button.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/register_screen/views/widgets/register_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/continue_with_google.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/form_header.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/main_button.dart';
 import '../controllers/register_screen_controller.dart';
 
 class RegisterScreenView extends GetView<RegisterScreenController> {
@@ -30,7 +30,7 @@ class RegisterScreenView extends GetView<RegisterScreenController> {
                 const KRegisterForm(),
       
                 // Register Button
-                KMainButton(buttonName: KTexts.register, onPressed: () {
+                KRegisterButton(onPressed: () {
                     if (controller.registerFormKey.currentState!.validate()){
                       Get.toNamed(Routes.HOME);
                     }

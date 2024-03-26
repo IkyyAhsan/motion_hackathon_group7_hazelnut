@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/controllers/login_screen_controller.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/register_screen/controllers/register_screen_controller.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
+import 'package:get_storage/get_storage.dart';
 
 class KLoginForm extends StatelessWidget {
   const KLoginForm({
@@ -14,6 +16,7 @@ class KLoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginScreenController());
+    final registerController = Get.put(RegisterScreenController());
     return Column(
       children: [
     
@@ -51,7 +54,7 @@ class KLoginForm extends StatelessWidget {
               return 'ⓘ Oops, password kamu salah';
             } else if (value.length < 6){
               return 'Password terdiri dari minimal 6 karakter';
-            } 
+            }
             return null;
           },
           obscureText: true,

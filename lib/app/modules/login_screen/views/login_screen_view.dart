@@ -8,7 +8,7 @@ import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/form_header.d
 import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_form.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/continue_with_google.dart';
-import 'package:motion_hackathon_group7_hazelnut/app/utils/widgets/main_button.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/login_screen/widgets/login_button.dart';
 import '../controllers/login_screen_controller.dart';
 
 class LoginScreenView extends GetView<LoginScreenController> {
@@ -36,7 +36,7 @@ class LoginScreenView extends GetView<LoginScreenController> {
                 const SizedBox(height: 8,),
       
                 // Login Button
-                KMainButton(buttonName: KTexts.login, onPressed: () {
+                KLoginButton(onPressed: () {
                   if (controller.loginFormKey.currentState!.validate()){
                     Get.toNamed(Routes.NAVBAR);
                   }

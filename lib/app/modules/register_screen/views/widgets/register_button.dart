@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 
-class KMainButton extends StatelessWidget {
-  const KMainButton({
-    super.key, required this.buttonName, required this.onPressed,
+class KRegisterButton extends StatelessWidget {
+  const KRegisterButton({
+    super.key, required this.onPressed,
   });
-
-  final String buttonName;
   final VoidCallback onPressed;
 
   @override
@@ -22,7 +20,7 @@ class KMainButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10)
           )
         ), backgroundColor: MaterialStateProperty.all(KColors.primaryColor)),
-        child: Text(buttonName, style: GoogleFonts.plusJakartaSans(color: Colors.white, fontSize: 18),),
+        child: Text('Daftar', style: GoogleFonts.plusJakartaSans(color: Colors.white, fontSize: 18),),
         ),
     );
   }
