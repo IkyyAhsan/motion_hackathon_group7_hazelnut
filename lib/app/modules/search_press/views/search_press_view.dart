@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/navbar/views/navbar_view.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/modules/search_press/views/widgets/search_results.dart';
+import 'package:motion_hackathon_group7_hazelnut/app/routes/app_pages.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/colors.dart';
 import 'package:motion_hackathon_group7_hazelnut/app/utils/constants/text_strings.dart';
 
@@ -20,6 +23,7 @@ class SearchPressView extends GetView<SearchPressController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const NavbarView(),
               Container(
                 color: Colors.white,
                 padding: const EdgeInsets.only(bottom: 20),
@@ -50,47 +54,27 @@ class SearchPressView extends GetView<SearchPressController> {
                 children: [
                   Row(
                     children: [
-                      search_result(text: 'Barokah',),
-                      search_result(text: 'Pandawa',),
-                      search_result(text: 'Warkop add',),
+                      search_result(text: 'Barokah', width: 80,),
+                      SizedBox(width: 12,),
+                      search_result(text: 'Pandawa', width: 85,),
+                      SizedBox(width: 12,),
+                      search_result(text: 'Warkop add', width: 102,),
                     ],
                   ),
                   Row(
-                        children: [
-                        search_result(text: 'Wartegkuy',),
-                        search_result(text: 'Makmur',),
-                        ],
-                      )
+                    children: [
+                      search_result(text: 'Wartegkuy', width: 94,),
+                      SizedBox(width: 12,),
+                      search_result(text: 'Makmur', width: 78,),
+                    ],
+                  )
                 ],
               )
             ],
           ),
         ),
-      )
+      ),
     );
   }
 }
 
-class search_result extends StatelessWidget {
-  const search_result({
-    super.key, 
-    required this.text,
-  });
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 28,
-    margin: const EdgeInsets.all(10),
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-    alignment: Alignment.center,
-    decoration: BoxDecoration(
-      color: KColors.dividerGrey,
-      borderRadius: BorderRadius.circular(96),
-    ),
-    child: Text(text, style: GoogleFonts.plusJakartaSans(textStyle: const TextStyle(fontSize: 12)),),
-                      );
-  }
-}

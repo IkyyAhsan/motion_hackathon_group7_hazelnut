@@ -6,18 +6,14 @@ import '../controllers/history_screen_controller.dart';
 
 class HistoryScreenView extends GetView<HistoryScreenController> {
   const HistoryScreenView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HistoryScreenView'),
+        automaticallyImplyLeading: false,
+        title: const Text('Riwayat'),
         centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'HistoryScreenView is working',
-          style: TextStyle(fontSize: 20),
-        ),
       ),
     );
   }

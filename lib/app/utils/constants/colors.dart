@@ -10,4 +10,5 @@ class KColors {
   static const labelTextColor = Color(0xFFB0B0B0);
   static const statusHaveAccount = Color(0xFF3D3D3D);
   static const shoppingCart = Color(0xFF1F2328);
+  static const redDelete = Color(0xFFE22626);
 }

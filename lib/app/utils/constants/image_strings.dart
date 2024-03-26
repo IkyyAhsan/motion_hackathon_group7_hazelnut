@@ -15,4 +15,9 @@ class KImages {
 
   // Images
   static const String blangImages = 'assets/images/eclipse.png';
+
+  // Product Images
+  static const String productImage1 = 'assets/images/product_image_1.jpg';
+  static const String productImage2 = 'assets/images/product_image_2.jpg';
+  static const String productImage3 = 'assets/images/product_image_3.jpg';
 }

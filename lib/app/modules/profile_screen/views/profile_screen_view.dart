@@ -12,12 +12,10 @@ class ProfileScreenView extends GetView<ProfileScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
   appBar: AppBar(
+    automaticallyImplyLeading: false,
     title: const Text('ProfileScreenView'),
     centerTitle: true,
   ),
-  body: Center(
-    child: Text('Profile Screen')
-  ),
-);
+  );
   }
 }
