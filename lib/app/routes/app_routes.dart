@@ -15,6 +15,9 @@ abstract class Routes {
   static const HISTORY_SCREEN = _Paths.HISTORY_SCREEN;
   static const PRODUCT_SCREEN = _Paths.PRODUCT_SCREEN;
   static const SHOPPING_CART = _Paths.SHOPPING_CART;
+  static const METODE_PEMBAYARAN = _Paths.METODE_PEMBAYARAN;
+  static const NOTIFIKASI = _Paths.NOTIFIKASI;
+  static const ALAMAT_PENGIRIMAN = _Paths.ALAMAT_PENGIRIMAN;
 }
 
 abstract class _Paths {
@@ -29,4 +32,7 @@ abstract class _Paths {
   static const HISTORY_SCREEN = '/history-screen';
   static const PRODUCT_SCREEN = '/product_screen';
   static const SHOPPING_CART = '/shopping-cart';
+  static const METODE_PEMBAYARAN = '/metode-pembayaran';
+  static const NOTIFIKASI = '/notifikasi';
+  static const ALAMAT_PENGIRIMAN = '/alamat-pengiriman';
 }

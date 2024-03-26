@@ -1,4 +1,4 @@
-// Menyimpan seluruh warna yang dibutuhkan 
+// Menyimpan seluruh warna yang dibutuhkan
 
 import 'package:flutter/material.dart';
 
@@ -10,4 +10,5 @@ class KColors {
   static const labelTextColor = Color(0xFFB0B0B0);
   static const statusHaveAccount = Color(0xFF3D3D3D);
   static const shoppingCart = Color(0xFF1F2328);
+  static const profileContainer = Color(0xFFF6F6F6);
 }

@@ -29,6 +29,7 @@ class KTexts {
   static const String registerHere = "Daftar disini";
   static const String continueWithGoogle = "Lanjutkan dengan Google";
   static const String rizalCanEatToday = "Halo Rizal\nMau makan apa hari ini?";
+  static const String profileNameandNumber = "Kenyangers\n+628529000233";
   static const String eatToday = "Mau makan apa hari ini?";
   static const String eatSearch = "Cari makan yang kamu inginkan";
 }
