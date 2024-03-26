@@ -2,14 +2,20 @@ import 'package:get/get.dart';
 
 import '../modules/checkout_screen/bindings/checkout_screen_binding.dart';
 import '../modules/checkout_screen/views/checkout_screen_view.dart';
+import '../modules/alamat_pengiriman/bindings/alamat_pengiriman_binding.dart';
+import '../modules/alamat_pengiriman/views/alamat_pengiriman_view.dart';
 import '../modules/history_screen/bindings/history_screen_binding.dart';
 import '../modules/history_screen/views/history_screen_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login_screen/bindings/login_screen_binding.dart';
 import '../modules/login_screen/views/login_screen_view.dart';
+import '../modules/metode_pembayaran/bindings/metode_pembayaran_binding.dart';
+import '../modules/metode_pembayaran/views/metode_pembayaran_view.dart';
 import '../modules/navbar/bindings/navbar_binding.dart';
 import '../modules/navbar/views/navbar_view.dart';
+import '../modules/notifikasi/bindings/notifikasi_binding.dart';
+import '../modules/notifikasi/views/notifikasi_view.dart';
 import '../modules/onboarding_screen/bindings/onboarding_screen_binding.dart';
 import '../modules/onboarding_screen/views/onboarding_screen_view.dart';
 import '../modules/product_screen/bindings/product_screen_binding.dart';
@@ -31,7 +37,7 @@ class AppPages {
   AppPages._();
 
   // ignore: constant_identifier_names
-  static const INITIAL = Routes.ONBOARDING_SCREEN;
+  static const INITIAL = Routes.SPLASH_SCREEN;
 
   static final routes = [
     GetPage(
@@ -48,11 +54,6 @@ class AppPages {
       name: _Paths.REGISTER_SCREEN,
       page: () => const RegisterScreenView(),
       binding: RegisterScreenBinding(),
-    ),
-    GetPage(
-      name: _Paths.ONBOARDING_SCREEN,
-      page: () => const OnboardingScreenView(),
-      binding: OnboardingScreenBinding(),
     ),
     GetPage(
       name: _Paths.SPLASH_SCREEN,
@@ -93,6 +94,21 @@ class AppPages {
       name: _Paths.CHECKOUT_SCREEN,
       page: () => const CheckoutScreenView(),
       binding: CheckoutScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.METODE_PEMBAYARAN,
+      page: () => const MetodePembayaranView(),
+      binding: MetodePembayaranBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFIKASI,
+      page: () => const NotifikasiView(),
+      binding: NotifikasiBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALAMAT_PENGIRIMAN,
+      page: () => const AlamatPengirimanView(),
+      binding: AlamatPengirimanBinding(),
     ),
   ];
 }

@@ -20,6 +20,7 @@ dependencies:
   get_storage: ^2.1.1
   google_fonts: ^6.2.1
   iconsax: ^0.0.8
+  smooth_page_indicator: ^1.1.0
   sticky_headers: ^0.3.0+2
 
 dev_dependencies:

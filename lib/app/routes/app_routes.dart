@@ -17,6 +17,9 @@ abstract class Routes {
   static const SHOPPING_CART = _Paths.SHOPPING_CART;
   static const SEARCH_PRESS = _Paths.SEARCH_PRESS;
   static const CHECKOUT_SCREEN = _Paths.CHECKOUT_SCREEN;
+  static const METODE_PEMBAYARAN = _Paths.METODE_PEMBAYARAN;
+  static const NOTIFIKASI = _Paths.NOTIFIKASI;
+  static const ALAMAT_PENGIRIMAN = _Paths.ALAMAT_PENGIRIMAN;
 }
 
 abstract class _Paths {
@@ -33,4 +36,7 @@ abstract class _Paths {
   static const SHOPPING_CART = '/shopping-cart';
   static const SEARCH_PRESS = '/search-press';
   static const CHECKOUT_SCREEN = '/checkout-screen';
+  static const METODE_PEMBAYARAN = '/metode-pembayaran';
+  static const NOTIFIKASI = '/notifikasi';
+  static const ALAMAT_PENGIRIMAN = '/alamat-pengiriman';
 }

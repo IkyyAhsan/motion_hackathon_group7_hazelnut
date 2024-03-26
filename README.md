@@ -31,18 +31,17 @@ Password : sayarijal
 
 ## Screenshots
 
-![Splash Screen](./screenshot/splash_screen.jpeg)
-![Welcome Before Login](./screenshot/welcome_before_login.jpeg)
+![Splash Screen](assets/Screenshot/SplashScreen.png)
 
-![Register](./screenshot/register.jpeg)
+![Register](assets/Screenshot/RegisterScreen.png)
 
-![Login](./screenshot/login.jpeg)
-
-![Login Success](./screenshot/login_success.jpeg)
-![Welcome](./screenshot/welcome.jpeg)
-![List Books](./screenshot/list_books.jpeg)
-![Upload Books](./screenshot/upload_books.jpeg)
-![Detail Books](./screenshot/detail_books.jpeg)
-![Edit Books](./screenshot/edit_data.jpeg)
-![Delete Books](./screenshot/delete_books.jpeg)
-![Logout](./screenshot/logout.jpeg)
+![Login](assets/Screenshot/LoginScreen.png)
+![checkOut](assets/Screenshot/checkOutScreen.png)
+![home](assets/Screenshot/HomeScreen.png)
+![Location](assets/Screenshot/LocationScreen.png)
+![metodepembayaran](assets/Screenshot/metodePembayaran.png)
+![Notifikasi](assets/Screenshot/NotifikasiScreen.png)
+![Profile](assets/Screenshot/ProfileScreen.png)
+![Riwayat](assets/Screenshot/RiwayatScreen.png)
+![Search](assets/Screenshot/SearchScreen.png)
+![ShoopingCart](assets/Screenshot/ShoppingCartScreen.png)
